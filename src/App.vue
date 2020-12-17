@@ -1,22 +1,16 @@
 <template>
-  <nav>
-    <ul>
-      <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/shop">Shop</router-link></li>
-      <li><router-link to="/contact">Contact</router-link></li>
-    </ul>
-  </nav>
   <Header>
-    <p><i class="fa fa-home"></i>This is a slot zone</p>
-    <template v-slot:welcome> This is a welcome message </template>
+    <a class="w3-bar-item w3-button w3-hover-black w3-right" @click="displayC()" title="Shppping Cart">
+      ({{nbProduct}}) <i class="fa fa-shopping-cart"></i> <span class="w3-hide-small">Shopping Cart</span>
+    </a>
   </Header>
-  <div class="w3-container">
 
- <!-- ROUTER-VIEW PERMET DE CHARGER LES COMPOSANTS CORRESPONDANTS DE CHAQUE ROUTE -->
+
+ <!-- ROUTER-VIEW PERMET DE CHARGER LE COMPOSANT CORRESPONDANT POUR CHAQUE ROUTE -->
    <router-view />
- <!-- ROUTER-VIEW PERMET DE CHARGER LES COMPOSANTS CORRESPONDANTS DE CHAQUE ROUTE -->
+ <!-- ROUTER-VIEW PERMET DE CHARGER LE COMPOSANT CORRESPONDANT POUR CHAQUE ROUTE -->
 
-  </div>
+
   <Footer />
 </template>
 
@@ -30,8 +24,14 @@ export default {
     Footer,
   },
   data() {
-    return {};
-  },
+    return {
+      nbProduct:1,
+      displayCart:false,
+      displayC(){
+        this.displayCart = !this.displayCart;
+      }
+    }
+  }
 };
 </script>
 
