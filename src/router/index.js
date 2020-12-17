@@ -7,17 +7,17 @@ const router = createRouter({
     history: createWebHistory(),
     routes:[
         {
-            path: "/",
+            path: "/Vue3MiniSite/",
             name: "Home",
             component: Home
         },
         {
-            path: "/shop",
+            path: "/Vue3MiniSite/shop",
             name: "Shop",
             component: Shop
         },
         {
-            path: "/contact",
+            path: "/Vue3MiniSite/contact",
             name: "Contact",
             component: Contact
         }
